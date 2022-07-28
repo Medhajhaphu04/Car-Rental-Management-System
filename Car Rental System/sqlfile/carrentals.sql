@@ -24,26 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `UserName` varchar(100) NOT NULL,
-  `Password` varchar(100) NOT NULL,
-  `updationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `UserName`, `Password`, `updationDate`) VALUES
-(1, 'admin', '5c428d8875d2948607f3e3fe134d71b4', '2017-06-18 12:22:38');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tblbooking`
 --
 
@@ -97,24 +77,7 @@ INSERT INTO `tblbrands` (`id`, `BrandName`, `CreationDate`, `UpdationDate`) VALU
 (10, 'Range Rover', '2020-10-31 11:49:39', NULL);
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `tblcontactusinfo`
---
-
-CREATE TABLE `tblcontactusinfo` (
-  `id` int(11) NOT NULL,
-  `Address` tinytext DEFAULT NULL,
-  `EmailId` varchar(255) DEFAULT NULL,
-  `ContactNo` char(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblcontactusinfo`
---
-
-INSERT INTO `tblcontactusinfo` (`id`, `Address`, `EmailId`, `ContactNo`) VALUES
-(1, 'Test Demo test demo																									', 'test@test.com', '8585233222');
+																								
 
 -- --------------------------------------------------------
 
@@ -138,25 +101,6 @@ CREATE TABLE `tblcontactusquery` (
 
 INSERT INTO `tblcontactusquery` (`id`, `name`, `EmailId`, `ContactNumber`, `Message`, `PostingDate`, `status`) VALUES
 (1, 'Harry Den', 'webhostingamigo@gmail.com', '2147483647', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '2017-06-18 10:03:07', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblsubscribers`
---
-
-CREATE TABLE `tblsubscribers` (
-  `id` int(11) NOT NULL,
-  `SubscriberEmail` varchar(120) DEFAULT NULL,
-  `PostingDate` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblsubscribers`
---
-
-INSERT INTO `tblsubscribers` (`id`, `SubscriberEmail`, `PostingDate`) VALUES
-(1, 'anuj.lpu1@gmail.com', '2017-06-22 16:35:32');
 
 -- --------------------------------------------------------
 
@@ -255,12 +199,6 @@ INSERT INTO `tblvehicles` (`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOver
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tblbooking`
 --
 ALTER TABLE `tblbooking`
@@ -273,21 +211,9 @@ ALTER TABLE `tblbrands`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblcontactusinfo`
---
-ALTER TABLE `tblcontactusinfo`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tblcontactusquery`
 --
 ALTER TABLE `tblcontactusquery`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblsubscribers`
---
-ALTER TABLE `tblsubscribers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -307,12 +233,6 @@ ALTER TABLE `tblvehicles`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `tblbooking`
 --
 ALTER TABLE `tblbooking`
@@ -324,23 +244,13 @@ ALTER TABLE `tblbooking`
 ALTER TABLE `tblbrands`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
---
--- AUTO_INCREMENT for table `tblcontactusinfo`
---
-ALTER TABLE `tblcontactusinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 
 --
 -- AUTO_INCREMENT for table `tblcontactusquery`
 --
 ALTER TABLE `tblcontactusquery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tblsubscribers`
---
-ALTER TABLE `tblsubscribers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tblusers`
