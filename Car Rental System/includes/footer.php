@@ -40,30 +40,20 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             <li><a href="index.php">HOME</a></li>
             <li><a href="car-listing.php">CARS</a></li>
             <li><a href="contact-us.php" >CONTACT US</a></li>
-            <li><a href="page.php?type=aboutus" >ABOUT US</a></li>
+            <li><a href="page.php" >ABOUT US</a></li>
           </ul>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <h6>Let's Keep in Touch</h6>
-          <div class="newsletter-form">
-            <form method="post">
-              <div class="form-group">
-                <input type="email" name="subscriberemail" class="form-control newsletter-input" style="background-color:white;" required placeholder="Enter Your Email" />
-              </div>
-              <button type="submit" name="emailsubscibe" class="btn btn-block" style="background-color:#0066b2;">Subscribe</button>
-            </form>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
-  <div class="footer-bottom" style="background-color:#0066b2; text-align:center;">
+  <div class="footer-bottom" style="background-color:#0066b2;">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-push-6 text-right">
         </div>
         <div class="col-md-6 col-md-pull-6">
-         <p class="copy-right" style="background-color:#0066b2;">Copyright &copy; 2020 Wheels Up car India Private Ltd. All rights reserved.</p>
+          <center><p class="copy-right" style="background-color:#0066b2;">Copyright &copy; 2020 Wheels Up India Private Ltd. All rights reserved.</p></center>
         </div>
       </div>
     </div>
