@@ -4,14 +4,16 @@ if(isset($_POST['signup']))
 $fname=$_POST['fullname'];
 $email=$_POST['emailid'];
 $mobile=$_POST['mobileno'];
-//$address=$_POST['Address']
+$street=$_POST['street'];
+$city=$_POST['city'];
 $password=md5($_POST['password']);
-$sql="INSERT INTO  tblusers(FullName,EmailId,ContactNo,Password) VALUES(:fname,:email,:mobile,:password)";
+$sql="INSERT INTO  tblusers(FullName,EmailId,ContactNo,street,city,Password) VALUES(:fname,:email,:mobile,:street,:city,:password)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
-//$query->bindParam(':address',$mobile,PDO::PARAM_STR);
+$query->bindParam(':street',$street,PDO::PARAM_STR);
+$query->bindParam(':city',$city,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
@@ -57,12 +59,12 @@ return true;
 
 <div class="modal fade" id="signupform">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="background-color:#87CEEB;">
+    <div class="modal-content" style="background-color:#87CEEB; height:500px; overflow:auto;">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h3 class="modal-title" style="color:#0066b2;">MAKE MY ACCOUNT</h3>
       </div>
-      <div class="modal-body">
+      <div class="modal-bodys">
         <div class="row">
           <div class="signup_wrap">
             <div class="col-md-12 col-sm-6">
@@ -77,10 +79,12 @@ return true;
                   <input type="email" class="form-control" name="emailid" id="emailid" onBlur="checkAvailability()" placeholder="Email Address" required="required">
                    <span id="user-availability-status" style="font-size:12px;"></span>
                 </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="street" placeholder="Street Name" required="required">
                 </div>
-                      <!-- <div class="form-group">
-                  <input type="text" class="form-control" name="Address" placeholder="Your address" maxlength="30" required="required">
-                </div> -->
+                <div class="form-group">
+                  <input type="text" class="form-control" name="city" placeholder="City" required="required">
+                </div>
                 <div class="form-group">
                   <input type="password" class="form-control" name="password" placeholder="Password" required="required">
                 </div>
